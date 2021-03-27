@@ -1,18 +1,21 @@
-let original_number = 62;
-let temp = original_number;
+let original_number = 600851475143;
+let reminder = original_number;
+let last_factor = 1;
 
-while (temp % 2 == 0) {
-    temp = temp / 2;
-    console.log(2);
+while (reminder % 2 == 0) {
+    reminder = reminder / 2;
 }
 
 let i;
 for (i = 3; i < Math.sqrt(original_number); i = i + 2) {
-    if (temp % i == 0) {
-        temp = temp / i;
-        console.log("divided by: " + i);
-        console.log("temp: " + temp);
+    if (reminder % i == 0) {
+        reminder = reminder / i;
+        last_factor = i;
     }
 }
 
-console.log("fuck!");
+if (last_factor > reminder) {
+    console.log(last_factor);
+} else {
+    console.log(reminder);
+}
